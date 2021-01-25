@@ -3,11 +3,9 @@ package com.company;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.OptionalDouble;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
-import java.util.stream.IntStream;
 
 public class Main {
 
@@ -18,8 +16,8 @@ public class Main {
 
 
     public static void main(String[] args) {
-         //part1();
-        //part2();
+        part1();
+        part2();
         part3();
         System.out.println(answers);
     }
