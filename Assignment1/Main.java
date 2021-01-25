@@ -14,10 +14,13 @@ public class Main {
     static List<String> answers = new ArrayList<>();
     static Predicate<String> moreThan12 = s -> s.length() > 12;
     static Predicate<String> lessThan2 = s -> s.length() < 2;
+    static RandomValues random = new RandomValues();
+
 
     public static void main(String[] args) {
-        part1();
-        part2();
+         //part1();
+        //part2();
+        part3();
         System.out.println(answers);
     }
 
@@ -119,4 +122,44 @@ public class Main {
 
 
     }
+
+    static void part3() {
+        //Create part3
+       List<MyObject> myList = new ArrayList<>();
+
+       for (int i = 0; i <= 50; i++) {
+           myList.add(new MyObject(
+                   random.randomString(10, false),
+                   random.randomint(50),
+                   random.randomBool()));
+       }
+
+       //Part 3
+        answers.add("\n" + "Del 3:"  + "\n");
+
+       //1.
+        answers.add("1. " + myList
+                .stream()
+                .filter(x -> x.getNumber() > 20)
+                .collect(Collectors.toList())
+                + "\n");
+
+        //2.
+        answers.add("2. " + myList
+                .stream()
+                .mapToInt(MyObject::getNumber)
+                .average()
+                .getAsDouble()
+                + "\n");
+
+        //3.
+        answers.add("3. " + myList
+                .stream()
+                .filter(MyObject::isBool)
+                .peek(x -> x.setName("This is true"))
+                .collect(Collectors.toList())
+                + "\n");
+
+    }
+
 }
