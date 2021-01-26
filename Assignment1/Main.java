@@ -88,7 +88,7 @@ public class Main {
         myStream = Arrays.stream(myArray);
         //2.
         answers.add("2. " + myStream
-                .map(Math::floor)
+                .map(Math::round)
                 .filter(x -> x < 1000)
                 .filter(x -> x % 3 == 0)
                 .filter(x -> x != 0)
