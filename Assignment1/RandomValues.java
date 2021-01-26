@@ -42,4 +42,10 @@ public class RandomValues {
     public boolean randomBool () {
         return random.nextBoolean();
     }
+
+    public int Dice () {
+        int myInt = 1;
+        myInt = random.nextInt(6);
+        return myInt;
+    }
 }
